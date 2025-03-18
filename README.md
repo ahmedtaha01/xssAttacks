@@ -14,11 +14,14 @@ steps to run the project , insure that you have python 3.9 or lower
 
 python -m venv .venv
 
-### 4️⃣ Install dependencies
+### 4️⃣ activate virtual environment
+
+.venv\Scripts\activate
+
+### 5️⃣ Install dependencies
 
 pip install -r requirements.txt
 
-
-### 5️⃣ then last step is to run the web app
+### 6️⃣ then last step is to run the web app
 
 python app.py
