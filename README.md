@@ -1,13 +1,24 @@
 steps to run the project , insure that you have python 3.9 or lower
 
-1 - git clone https://github.com/ahmedtaha01/xssAttacks.git
+## 📦 Installation  
 
-2 - cd xssAttacks
+### 1️⃣ Clone the Repository 
 
-3 - python -m venv .venv
+ git clone https://github.com/ahmedtaha01/xssAttacks.git
 
-4 - pip install -r requirements.txt
+### 2️⃣ Move into the directory
+ 
+ cd xssAttacks
+
+### 3️⃣ Create virtual environment
+
+python -m venv .venv
+
+### 4️⃣ Install dependencies
+
+pip install -r requirements.txt
+
 
 then last step is to run the web app
 
-5 - python app.py
+python app.py
