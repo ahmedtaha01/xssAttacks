@@ -19,6 +19,6 @@ python -m venv .venv
 pip install -r requirements.txt
 
 
-then last step is to run the web app
+### 5️⃣ then last step is to run the web app
 
 python app.py
