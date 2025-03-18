@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="body-fixed">
+
+{% include 'includes/header.html' %}
+
+<main>
+    {% block content %}{% endblock %}  <!-- Content of each page -->
+</main>
+
+{% include 'includes/footer.html' %}
+
+</body>
+
+</html>
