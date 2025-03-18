@@ -32,6 +32,9 @@ python app.py
 follow This video for instructions <a href="https://www.youtube.com/watch?v=ToI8nnyuPiI">Video</a>
 
 after downloading it , and open a cmd on the project folder and write : 
+
 sqlite3 instance/databasename.db
+
 now you are inside the database 
+
 write .tables to show tables that you have
