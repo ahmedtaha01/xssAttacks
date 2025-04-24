@@ -219,4 +219,50 @@ $(document).ready(function () {
         });
     });
 
+    // Login Form Handling
+    $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+        const formData = $(this).serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: '/login',
+            data: formData,
+            success: function(response) {
+                $('#loginResponse').html('<div class="alert alert-success">' + response.message + '</div>');
+                // Optionally, you can redirect after a few seconds if you want
+                setTimeout(function() {
+                    window.location.href = '/';
+                }, 2000);
+            },
+            error: function(xhr) {
+                let response = JSON.parse(xhr.responseText);
+                $('#loginResponse').html('<div class="alert alert-danger">' + response.error + '</div>');
+            }            
+        });
+    });
+
+    // Signup Form Handling
+    $('#signupForm').on('submit', function(e) {
+        e.preventDefault();
+        const formData = $(this).serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: '/signup',
+            data: formData,
+            success: function(response) {
+                $('#signupResponse').html('<div class="alert alert-success">' + response.message + '</div>');
+                // Optionally, you can redirect after a few seconds if you want
+                setTimeout(function() {
+                    window.location.href = '/login-page';
+                }, 2000);
+            },
+            error: function(xhr) {
+                let response = JSON.parse(xhr.responseText);
+                $('#signupResponse').html('<div class="alert alert-danger">' + response.error + '</div>');
+            }   
+        });
+    });
+
 });

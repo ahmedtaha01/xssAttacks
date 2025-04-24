@@ -1,0 +1,56 @@
+    <!-- start of header  -->
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header-logo">
+                        <a href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='images/logo.png')}}" width="160" height="36" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="main-navigation">
+                        <button class="menu-toggle"><span></span><span></span></button>
+                        <nav class="header-menu">
+                            <ul class="menu food-nav-menu">
+                                <li><a href="{{ url_for('index') }}#home">Home</a></li>
+                                <li><a href="{{ url_for('index') }}#about">About</a></li>
+                                <li><a href="{{ url_for('index') }}#menu">Menu</a></li>
+                                <li><a href="{{ url_for('index') }}#gallery">Gallery</a></li>
+                                <li><a href="{{ url_for('index') }}#blog">Blog</a></li>
+                                <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-right">
+                            <form id="searchForm" action="#" class="header-search-form for-des">
+                                <input type="search" id="searchInput" class="form-input" placeholder="Search Here...">
+                                <button type="submit">
+                                    <i class="uil uil-search"></i>
+                                </button>
+                            </form>
+                            <!-- <a href="javascript:void(0)" class="header-btn header-cart">
+                                <i class="uil uil-shopping-bag"></i>
+                                <span class="cart-number">3</span>
+                            </a> -->
+                            <!-- ... your existing header-right content ... -->
+                            {% if 'user_id' in session %}
+                                <a href="{{ url_for('profile_page') }}" class="header-btn" title="My Profile">
+                                    <i class="uil uil-user-md"></i>
+                                </a>
+
+                                <a href="{{ url_for('logout') }}" class="header-btn">
+                                    <i class="uil uil-sign-out-alt"></i>
+                                </a>
+                            {% else %}
+                                <a href="{{ url_for('login_page') }}" class="header-btn">
+                                    <i class="uil uil-sign-in-alt"></i>  <!-- Login/sign-in icon -->
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header ends  -->
