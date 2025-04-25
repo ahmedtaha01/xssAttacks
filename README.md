@@ -12,6 +12,6 @@ steps to run the project , insure that you have python 3.9 or lower <a href="htt
 
 ### 3 just use docker to install it
 
- docker build -t <image_name> . 
+docker build -t flask-app .
 
- docker run --name <container_name> -d -p 4000:5001 <image_name> 
+docker run --name flask-app-container -v /home/sherif/Desktop/python_projects/xssAttacks:/app  -d -p 4000:5001 flask-app
