@@ -61,13 +61,13 @@ def signup():
     elif User.query.filter_by(email=email).first():
         return jsonify({'error': 'Email already exists'}), 400
     else:
-        # new_user = User(
-        #     name=name,
-        #     email=email,
-        #     password=generate_password_hash(password)
-        # )
-        # db.session.add(new_user)
-        # db.session.commit()
+        new_user = User(
+            name=name,
+            email=email,
+            password=generate_password_hash(password)
+        )
+        db.session.add(new_user)
+        db.session.commit()
 
         return jsonify({'message': 'Account created successfully! redirection to login page.'}), 200
 
