@@ -176,6 +176,7 @@ $(document).ready(function () {
         event.preventDefault(); // Prevent default form submission
 
         let searchQuery = $("#searchInput").val(); // Get search input value
+        searchResult = document.getElementById("search-result");
 
         $.ajax({
             url: "/search", // Route in Flask
@@ -183,7 +184,8 @@ $(document).ready(function () {
             data: { query: searchQuery }, // Send search query
             success: function (response) {
                 // Handle success response
-                alert("Search results: " + response.results);
+                // alert("Search results: " + response.results);
+                searchResult.innerHTML = response.results;
             },
             error: function (xhr, status, error) {
                 console.error("Error:", error);

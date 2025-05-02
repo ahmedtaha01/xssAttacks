@@ -87,13 +87,14 @@ def logout():
 @app.route('/search', methods=['POST'])
 def search():
     search_query = request.form.get('query')
-    results = predict_sentiment(search_query)
+    # results = predict_sentiment(search_query)
 
-    new_result = SentimentResult(text=search_query, sentiment=results)
-    db.session.add(new_result)
-    db.session.commit()
+    # new_result = SentimentResult(text=search_query, sentiment=results)
+    # db.session.add(new_result)
+    # db.session.commit()
 
-    return jsonify({'results': results})
+    # untill the secuirty model is added
+    return jsonify({'results': search_query})
 
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
@@ -101,15 +102,16 @@ def subscribe():
 
     results = {}
     
-    for key, value in data.items():
-        sentiment = predict_sentiment(value)
-        results[key] = sentiment
+    # for key, value in data.items():
+    #     sentiment = predict_sentiment(value)
+    #     results[key] = sentiment
 
-        new_result = SentimentResult(text=value, sentiment=sentiment)
-        db.session.add(new_result)
+    #     new_result = SentimentResult(text=value, sentiment=sentiment)
+    #     db.session.add(new_result)
 
-    db.session.commit()
+    # db.session.commit()
 
+    # untill the secuirty model is added
     return jsonify({'results': results})
 
 
